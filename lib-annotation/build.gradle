@@ -1,0 +1,19 @@
+apply plugin: 'java-library'
+
+apply plugin: 'com.novoda.bintray-release'
+
+publish {
+    userOrg = 'rain-wxsy' //bintray账户下某个组织id
+    groupId = 'com.rain.permission' //maven仓库下库的包名，一般为模块包名
+    artifactId = 'permission-annotation' //项目名称
+    publishVersion = '0.1.1' //版本号
+    desc = '' //项目介绍，可以不写
+    website = '' //项目主页，可以不写
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+}
+
+sourceCompatibility = "7"
+targetCompatibility = "7"
