@@ -1,0 +1,16 @@
+ext.deps = [:]
+
+def android = [:]
+android.applicationId = "com.rain.permission"
+android.compileSdkVersion = 29
+android.buildToolsVersion = "29.0.2"
+android.minSdkVersion = 16
+android.targetSdkVersion = 29
+android.versionCode = 1
+android.versionName = "1.0.0"
+
+ext.android = android
+
+def versions = [:]
+versions.kotlin = "1.2.30"
+ext.versions = versions
