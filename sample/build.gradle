@@ -33,10 +33,9 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-    kapt project(path: ':lib-process')
-//    implementation project(path: ':lib-annotation')
-    implementation project(path: ':library')
+//    kapt project(path: ':lib-process')
+//    implementation project(path: ':library')
 
-//    implementation 'com.rain.permission:rainknife:1.0.3'
-//    kapt 'com.rain.permission:permission-compile:1.0.3'
+    implementation 'com.rain.permission:rainknife:1.0.5'
+    kapt 'com.rain.permission:permission-compile:1.0.5'
 }

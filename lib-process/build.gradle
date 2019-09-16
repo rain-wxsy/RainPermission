@@ -1,5 +1,41 @@
 apply plugin: 'java-library'
 
+apply plugin:'com.novoda.bintray-release'
+
+//文档打包成jar
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+//拷贝javadoc文件
+task copyDoc(type: Copy) {
+    from "${buildDir}/docs/"
+    into "docs"
+}
+
+//上传到JCenter所需要的源码文件
+artifacts {
+    archives javadocJar
+//    archives sourcesJar
+}
+
+//解决 JavaDoc 中文注释生成失败的问题
+tasks.withType(Javadoc) {
+    options.addStringOption('Xdoclint:none', '-quiet')
+    options.addStringOption('encoding', 'UTF-8')
+    options.addStringOption('charSet', 'UTF-8')
+}
+
+publish {
+    userOrg = 'rain-wxsy' //bintray账户下某个组织id
+    groupId = 'com.rain.permission' //maven仓库下库的包名，一般为模块包名
+    artifactId = 'permission-compile' //项目名称
+    publishVersion = '1.0.5' //版本号
+    desc = '' //项目介绍，可以不写
+    website = '' //项目主页，可以不写
+}
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
@@ -7,7 +43,7 @@ dependencies {
 
     implementation 'com.google.auto.service:auto-service:1.0-rc4'
     annotationProcessor 'com.google.auto.service:auto-service:1.0-rc4'
-    implementation project(path: ':lib-annotation')
+//    implementation project(path: ':lib-annotation')
 
     implementation 'com.rain.permission:permission-annotation:1.0.1'
 }

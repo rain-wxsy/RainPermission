@@ -118,11 +118,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun openSetting() {
-        val intent = Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS)
-        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-        val uri = Uri.fromParts("package", packageName, null)
-        intent.data = uri
-        startActivity(intent)
+//        val intent = Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS)
+//        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+//        val uri = Uri.fromParts("package", packageName, null)
+//        intent.data = uri
+//        startActivity(intent)
     }
 
     override fun onRequestPermissionsResult(
