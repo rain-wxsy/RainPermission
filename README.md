@@ -53,11 +53,13 @@ android权限申请工具，简单、易用，几行代码即可搞定繁琐复�
 
 # 引用
 kotlin项目
+
   implementation 'com.rain.permission:rainknife:1.0.3'
   
   kapt 'com.rain.permission:permission-compile:1.0.3'
   
 java项目
+
    implementation 'com.rain.permission:rainknife:1.0.3'
    
    annotationProcessor 'com.rain.permission:permission-compile:1.0.3'
