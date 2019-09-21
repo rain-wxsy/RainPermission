@@ -54,15 +54,18 @@ android权限申请工具，简单、易用，几行代码即可搞定繁琐复�
 # 引用
 kotlin项目
 
-  implementation 'com.rain.permission:rainknife:1.0.5'
+  implementation 'com.rain.permission:rainknife:1.2.1'
   
-  kapt 'com.rain.permission:permission-compile:1.0.5'
+  kapt 'com.rain.permission:permission-compile:1.2.0'
   
 java项目
 
-   implementation 'com.rain.permission:rainknife:1.0.5'
+   implementation 'com.rain.permission:rainknife:1.2.1'
    
-   annotationProcessor 'com.rain.permission:permission-compile:1.0.5'
+   annotationProcessor 'com.rain.permission:permission-compile:1.2.0'
+   
+# 混淆
+  -keep class com.rain.permission.** {*;}
   
    
 # LICENSE
